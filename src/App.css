@@ -1,38 +1,180 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  display: flex;
+  height: 6rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #141619;
+  margin: 2rem 0 1.5rem 0;
+  gap: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #141619;
+  margin: auto 0 2rem 0;
+  padding: 0 1rem;
+  font-size: calc(5px + 1vmin);
+}
+
+header img {
+  height: 4rem;
+}
+
+header h1 {
+  font-size: calc(5px + 5vmin);
+}
+
+footer p.data span {
+  color: aquamarine;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0;
+}
+
+footer p.warning {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.years {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.years .year {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.75rem;
+  background-color: gray;
+  border-radius: 0.25rem;
+}
+
+.years .year::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0.25rem;
+  background-color: var(--color);
+  opacity: var(--gone);
+}
+
+div.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+input#birthday {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background-color: #141619;
+  color: white;
+}
+
+input#birthday::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.percent-life {
+  color: aquamarine;
+  font-weight: bold;
+}
+
+div.sexes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.sexes input#sexe {
+  display: none;
+}
+
+div.sexes label {
+  display: flex;
+}
+
+div.sexes div.switch-sexe {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.35rem;
+  margin-left: 5px;
+  z-index: 0;
+  border-radius: 999999999px;
+  background-color: #141619;
+  cursor: pointer;
+}
+
+div.sexes div.switch-sexe::after {
+  content: '';
+  position: absolute;
+  width: calc(10px + 3vmin);
+  height: calc(10px + 3vmin);
+  border-radius: 999999999px;
+  z-index: -1;
+  background-color: aquamarine;
+  transform: translateX(50%);
+  transition: transform 0.2s linear;
+}
+
+div.sexes:has(input[type='checkbox']:checked) div.switch-sexe::after {
+  transform: translateX(calc(-50%));
+}
+
+div.sexes div.switch-sexe .sexe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(10px + 3vmin);
+  height: calc(10px + 3vmin);
+  border-radius: 999999999px;
+}
+
+div.sexes:has(input[type='checkbox']:checked) div.switch-sexe .sexe.men {
+  color: #141619;
+  text-shadow: 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619;
+}
+
+div.sexes:not(:has(input[type='checkbox']:checked)) div.switch-sexe .sexe.women {
+  color: #141619;
+  text-shadow: 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619;
 }
