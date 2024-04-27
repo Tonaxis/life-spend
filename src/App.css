@@ -59,6 +59,10 @@ footer p.warning {
   margin: 0;
 }
 
+footer p.warning strong {
+  font-weight: bolder;
+}
+
 .years {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -79,7 +83,7 @@ footer p.warning {
 }
 
 .years .year::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -145,7 +149,7 @@ div.sexes div.switch-sexe {
 }
 
 div.sexes div.switch-sexe::after {
-  content: '';
+  content: "";
   position: absolute;
   width: calc(10px + 3vmin);
   height: calc(10px + 3vmin);
@@ -156,7 +160,7 @@ div.sexes div.switch-sexe::after {
   transition: transform 0.2s linear;
 }
 
-div.sexes:has(input[type='checkbox']:checked) div.switch-sexe::after {
+div.sexes:has(input[type="checkbox"]:checked) div.switch-sexe::after {
   transform: translateX(calc(-50%));
 }
 
@@ -169,12 +173,16 @@ div.sexes div.switch-sexe .sexe {
   border-radius: 999999999px;
 }
 
-div.sexes:has(input[type='checkbox']:checked) div.switch-sexe .sexe.men {
+div.sexes:has(input[type="checkbox"]:checked) div.switch-sexe .sexe.men {
   color: #141619;
-  text-shadow: 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619;
+  text-shadow: 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619,
+    0 0 1px #141619, 0 0 1px #141619;
 }
 
-div.sexes:not(:has(input[type='checkbox']:checked)) div.switch-sexe .sexe.women {
+div.sexes:not(:has(input[type="checkbox"]:checked))
+  div.switch-sexe
+  .sexe.women {
   color: #141619;
-  text-shadow: 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619;
+  text-shadow: 0 0 1px #141619, 0 0 1px #141619, 0 0 1px #141619,
+    0 0 1px #141619, 0 0 1px #141619;
 }
